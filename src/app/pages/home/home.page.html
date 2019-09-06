@@ -10,7 +10,7 @@
     <img src="{{news.image}}" />
     <ion-card-header>
       <ion-card-title>{{news.title}}</ion-card-title>
-      <ion-card-subtitle>{{news.likes | strlikes}} | {{news.publishedAt | timeAgo}}</ion-card-subtitle>
+      <ion-card-subtitle>{{news.likes | likesToString}} | {{news.publishedAt | timeAgoString}}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
     </ion-card-content>

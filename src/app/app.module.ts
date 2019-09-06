@@ -8,7 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StrlikesPipe } from './pipes/strlikes.pipe';
 
 @NgModule({
   declarations: [AppComponent],

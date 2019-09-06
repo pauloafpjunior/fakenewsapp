@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { isNumber } from 'util';
 
 @Pipe({
-  name: 'strlikes'
+  name: 'likesToString'
 })
-export class StrlikesPipe implements PipeTransform {
+export class LikesToStringPipe implements PipeTransform {
 
   transform(value: any, ...args: any[]): any {
     if (value && isNumber(value)) {
@@ -15,8 +15,9 @@ export class StrlikesPipe implements PipeTransform {
       } else {
         return (value / 10000000) + ' mi likes';
       }
-    } 
-    return null;
+    } else {
+      return null;
+    }
   }
 
 }
