@@ -38,9 +38,11 @@ export class NewsModel {
     public set publishedAt(publishedAt: Date) {
         this._publishedAt = publishedAt;
     }
-    public get likes() {
-        return this._likes;
-    }
+    
+    // Não possui o método get para forçar o programador a usar
+    // o método likesToString. Isso só é possível graças ao conceito
+    // de encapsulamento e visibilidade.
+
     public set likes(likes: number) {
         this._likes = likes;
     }
