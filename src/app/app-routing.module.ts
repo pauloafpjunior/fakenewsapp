@@ -5,7 +5,9 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+  },
+  { path: 'details', redirectTo: '', pathMatch: 'full' },
+  { path: 'details/:id', loadChildren: './pages/details/details.module#DetailsPageModule' }
 ];
 @NgModule({
   imports: [
