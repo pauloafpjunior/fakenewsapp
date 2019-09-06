@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from 'src/app/services/news.service';
+import { NewsModel } from 'src/app/model/news.model';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  private _lstNews: NewsModel[];
+
+  constructor(private newsService: NewsService) { }
 
   ngOnInit() {
+    this._lstNews = this.newsService.getAll();
   }
 
+  public get lstNews() {
+    return this._lstNews;
+  }
 }
