@@ -11,6 +11,15 @@ export class NewsModel {
         Object.assign(this, otherNews);
     }
 
+    public likesToString(): string {
+        if (this._likes < 1000) {
+            return this._likes + ' likes';
+        } else if (this._likes < 1000000) {
+            return (this._likes / 1000) + 'k likes';
+        } else {
+            return (this._likes / 10000000) + 'mi likes';
+        }
+    }    
     public get id() {
         return this._id;
     }

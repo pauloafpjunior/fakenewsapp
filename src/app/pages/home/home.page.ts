@@ -20,4 +20,7 @@ export class HomePage implements OnInit {
   public get lstNews() {
     return this._lstNews;
   }
+
+
+
 }
