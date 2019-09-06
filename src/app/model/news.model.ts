@@ -11,15 +11,6 @@ export class NewsModel {
         Object.assign(this, otherNews);
     }
 
-    public likesToString(): string {
-        if (this._likes < 1000) {
-            return this._likes + ' likes';
-        } else if (this._likes < 1000000) {
-            return (this._likes / 1000) + 'k likes';
-        } else {
-            return (this._likes / 10000000) + 'mi likes';
-        }
-    }    
     public get id() {
         return this._id;
     }
@@ -38,11 +29,9 @@ export class NewsModel {
     public set publishedAt(publishedAt: Date) {
         this._publishedAt = publishedAt;
     }
-    
-    // Não possui o método get para forçar o programador a usar
-    // o método likesToString. Isso só é possível graças ao conceito
-    // de encapsulamento e visibilidade.
-
+    public get likes() {
+        return this._likes;
+    }
     public set likes(likes: number) {
         this._likes = likes;
     }
