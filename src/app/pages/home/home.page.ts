@@ -13,8 +13,8 @@ export class HomePage implements OnInit {
 
   constructor(private newsService: NewsService) { }
 
-  ngOnInit() {
-    this._lstNews = this.newsService.getAll();
+  async ngOnInit() {
+    this._lstNews = await this.newsService.getAll();
   }
 
   public get lstNews() {

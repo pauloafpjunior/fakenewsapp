@@ -6,7 +6,7 @@
 
 <ion-content>
 
-  <ion-card *ngFor="let news of lstNews">
+  <ion-card *ngFor="let news of lstNews" [routerLink]="['/details', news.id]">
     <img src="{{news.image}}" />
     <ion-card-header>
       <ion-card-title>{{news.title}}</ion-card-title>
