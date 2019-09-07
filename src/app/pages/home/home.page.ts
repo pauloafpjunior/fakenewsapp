@@ -14,7 +14,11 @@ export class HomePage implements OnInit {
   constructor(private newsService: NewsService) { }
 
   async ngOnInit() {
-    this._lstNews = await this.newsService.getAll();
+    try {
+      this._lstNews = await this.newsService.getAll();
+    } catch(error) {
+      console.log("Erro ao carregar lista de notícias!");
+    }
   }
 
   public get lstNews() {

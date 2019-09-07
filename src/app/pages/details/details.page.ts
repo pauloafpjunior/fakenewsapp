@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NewsModel } from 'src/app/model/news.model';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-details',
@@ -8,11 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsPage implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  private _news: NewsModel;
 
-  ngOnInit() {
-    let newsid = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(newsid);
+  constructor(private activatedRoute: ActivatedRoute,
+    private newsService: NewsService) { }
+
+  async ngOnInit() {
+    try {
+      let newsid: number = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
+      this._news = await this.newsService.getBy(newsid);
+      console.log(this._news + ' - ' + newsid);
+    } catch(error) {
+      console.log("Erro ao carregar notícia!");
+    }
   }
 
+  public get news() {
+    return this._news; 
+  }
 }

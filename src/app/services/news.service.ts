@@ -17,13 +17,23 @@ export class NewsService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Promise<NewsModel[]> {
+  public getAll(): Promise<NewsModel[]> {
     return this.http.get<NewsModel[]>(`${this.API_BASE_URL}/news`).pipe(
       map(
         (itens: NewsModel[]) => {
           return itens.map(
             (item: NewsModel) => new NewsModel(item)
           )
+        }
+      )
+    ).toPromise();
+  }
+
+  public getBy(id: number): Promise<NewsModel> {
+    return this.http.get<NewsModel>(`${this.API_BASE_URL}/news/${id}`).pipe(
+      map(
+        (item: NewsModel) => {
+          return new NewsModel(item)
         }
       )
     ).toPromise();

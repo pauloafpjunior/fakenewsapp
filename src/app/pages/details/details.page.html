@@ -3,10 +3,19 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>details</ion-title>
+    <ion-title>FakeNewsApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-card *ngIf="news">
+    <ion-card-header>
+      <ion-card-title>{{news.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{news.content}}
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
