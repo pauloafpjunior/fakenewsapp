@@ -10,19 +10,10 @@
       <ion-label position="floating">Nome</ion-label>
       <ion-input></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Senha</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Confirmar senha</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-
   </ion-list>
   <ion-button expand="block" color="primary" target="_blank">Salvar</ion-button>
+  <ion-text class="ion-text-center">
+    <h5>Quer se desconectar?</h5>
+  </ion-text>
+  <ion-button expand="block" fill="outline" color="danger" (click)="logout()">Sair</ion-button>
 </ion-content>

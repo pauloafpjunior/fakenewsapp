@@ -15,6 +15,14 @@ export class AuthService {
     });
   }
 
+  public login() {
+    this._authState.next(true);
+  }
+
+  public logout() {
+    this._authState.next(false);
+  }
+
   private checkToken() {
     this._authState.next(true);
   }
