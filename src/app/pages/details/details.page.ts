@@ -19,7 +19,6 @@ export class DetailsPage implements OnInit {
     try {
       let newsid: number = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
       this._news = await this.newsService.getBy(newsid);
-      console.log(this._news + ' - ' + newsid);
     } catch(error) {
       console.log("Erro ao carregar notícia!");
     }
