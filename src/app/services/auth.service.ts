@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   private checkToken() {
-    this._authState.next(true);
+    this._authState.next(false);
   }
 
   public isAuthenticated() {

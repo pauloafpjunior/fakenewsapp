@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class NewsService {
 
   private lstNews: NewsModel[];
-  private API_BASE_URL: string = 'http://localhost:3000';
+  private API_BASE_URL: string = 'http://localhost:8000';
 
   constructor(private http: HttpClient) {
   }

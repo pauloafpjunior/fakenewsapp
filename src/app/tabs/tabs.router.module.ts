@@ -28,12 +28,12 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'profile',
+        path: 'settings',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../pages/profile/profile.module').then(m => m.ProfilePageModule)
+              import('../pages/settings/settings.module').then(m => m.SettingsPageModule)
           }
         ]
       },
